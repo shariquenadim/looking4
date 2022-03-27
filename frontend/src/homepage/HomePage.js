@@ -1,7 +1,28 @@
 import React from 'react';
 import './HomePage.scss';
+import axios from '../axios';
 
 export default function HomePage() {
+
+  const handleSubmit = function(e) {
+    e.preventDefault();
+
+    const userDetails = {
+      name: "name",
+      password: "password",
+      role: "admin",
+      email: "email@email.com"
+    }
+
+    axios.post("/signup", userDetails)
+    .then((res) => {
+      console.log(res)
+    })
+    .catch(err => {
+      console.log(err);
+    })
+  }
+
   return (
     <div className="homepage__container">
       <div className="nav__container">
@@ -26,7 +47,7 @@ export default function HomePage() {
             <div className="form__notice">
               Notice
             </div>
-            <form action="#" className="form__form" onSubmit={(e) => e.preventDefault()}>
+            <form action="#" className="form__form" onSubmit={handleSubmit}>
               <div className="form__item">
                 <label htmlFor="">ID</label>
                 <input type="text" required />
