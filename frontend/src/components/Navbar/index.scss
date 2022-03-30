@@ -1,0 +1,24 @@
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "Nunito";
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  &__heading {
+    font-family: 'Lobster';
+    font-size: 30px;
+    font-weight: 400;
+  }
+
+  &__right {
+    a {
+      margin: 0 15px;
+      font-weight: 700;
+    }
+  }
+}

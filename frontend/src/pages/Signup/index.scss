@@ -1,0 +1,72 @@
+.signup {
+  font-family: "Ubuntu";
+
+  &__form {
+    &--header {
+      text-align: center;
+  
+      h1 {
+        font-size: 32px;
+        font-weight: 600;
+        font-family: "Nunito";
+      }
+    }
+
+    &--title {
+      margin-bottom: 30px;
+
+      h2 {
+        font-size: 25px;
+        font-weight: 600;
+        font-family: "Ubuntu";
+      }
+    }
+  
+    &--body {
+      display: flex;
+      justify-content: center;
+      margin: 40px 0;
+    }
+  
+    &--form {
+      max-width: 400px;
+      width: 50%;
+    }
+  
+    &--item {
+      margin: 15px 0;
+  
+      label {
+        font-size: 16px;
+        font-weight: 500;
+        margin-bottom: 10px;
+        display: block;
+        font-family: "Ubuntu";
+      }
+  
+      input {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 10px 20px;
+        border-radius: 10px;
+        background-color: #eee;
+      }
+  
+      input[type="submit"] {
+        margin-top: 15px;
+        font-size: 20px;
+        font-weight: 500;
+        font-family: "Ubuntu";
+        cursor: pointer;
+      }
+    }
+
+    &--footer {
+      text-align: center;
+
+      a {
+        text-decoration: underline;
+      }
+    }
+  }
+}

@@ -1,11 +1,9 @@
-import HomePage from './homepage/HomePage';
-import './App.css';
-
-console.log("Rendered")
+import Homepage from './Homepage';
+import './App.scss';
 
 function App() {
   return (
-    <HomePage />
+    <Homepage />
   );
 }
 

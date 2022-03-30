@@ -1,0 +1,27 @@
+input {
+  border: none;
+  outline: none;
+}
+
+input:focus , input:active, input:target {
+  outline: none;
+  border: none;
+}
+
+a {
+  text-decoration: inherit;
+  font-weight: inherit;
+  font-size: inherit;
+  color: inherit;
+}
+
+.nav__container {
+  padding: 20px 50px;
+}
+
+.main__container {
+  background-color: rgb(8,48,69);
+  min-height: 100vh;
+  color: #fff;
+}
+

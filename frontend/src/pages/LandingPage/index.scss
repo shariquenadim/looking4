@@ -1,0 +1,38 @@
+.landingpage {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+
+
+  &__container {
+    position: relative;
+    min-height: calc(100vh - 80px);
+    background-color: rgb(8,48,69);
+  }
+
+  &__btnbox {
+    display: flex;
+  }
+
+  &__header {
+    text-decoration: none;
+    font-family: 'Lobster';
+    font-size: 40px;
+    font-weight: 400;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 50px;
+  }
+
+  &__btn {
+    text-decoration: none;
+    margin: 0 10px;
+    padding: 8px 12px;
+    border-radius: 10px;
+    background-color: #fff;
+    font-weight: 500;
+    font-size: 20px;
+    color: #555;
+  }
+}

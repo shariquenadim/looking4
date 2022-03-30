@@ -103,7 +103,7 @@ router.post(
 );
 
 router.post(
-  "/login",
+  "/signin",
   login
 );
 
