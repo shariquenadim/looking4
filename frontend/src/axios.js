@@ -13,10 +13,10 @@ const instance = axios.create({
   headers: {
     crossorigin:true,
     'Access-Control-Allow-Credentials':true,
-    'Access-Control-Allow-Origin' : '*',
+    'Access-Control-Allow-Origin' : 'http://localhost:5000',
     'Access-Control-Allow-Methods':'GET,PUT,POST,DELETE,PATCH,OPTIONS',
   },
-  withCredentials: false,
+  withCredentials: true,
 })
 
 export default instance;

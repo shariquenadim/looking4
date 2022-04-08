@@ -84,12 +84,8 @@ const login = function(req,res) {
             algorithm: accessTokenSecret.type,
             expiresIn: `${accessTokenSecret.expiresIn}m`,
           })
-          const cookieConfig = {
-            httpOnly: true,
-            sameSite: "none",
-            secure: false,
-          };
-          res.cookie("accessToken", token, cookieConfig);
+
+          res.cookie("accessToken", token, {httpOnly: true});
           
           return res
           .status(200)
@@ -111,7 +107,6 @@ const login = function(req,res) {
 
 const authenticate = function(req, res, next) {
 	const token = req.cookies.accessToken;
-  console.log("cooke/dashboard",req.cookies);
 
 	if (!token) {
 		return res
@@ -132,10 +127,24 @@ const authenticate = function(req, res, next) {
     .status(500)
     .json({type: "Internal Server Error", message: "An error has occurred. Please try again later."});
 	}
-  console.log(payload);
-	return next();
-  // .status(200)
-  // .json({message: payload});
+  console.log("payload",payload);
+	next();
+}
+
+const logout = function(req, res, next) {
+	const token = req.cookies.accessToken;
+
+	if (!token) {
+		return res
+    .status(402)
+    .json({type: "Internal Server Error", message: "No token"});
+	}
+
+  const newToken = jwt.sign({}, accessTokenSecret.key, { expiresIn: 1 });
+
+  res.cookie("accessToken", newToken, {httpOnly: true});
+
+  next();
 }
 
 router.post(
@@ -152,8 +161,17 @@ router.get(
   "/dashboard",
   authenticate,
   (req,res) => {
-    console.log(req)
+    // console.log(req)
     res.status(200).json({message: "dashboard"})
+  }
+)
+
+router.get(
+  "/logout",
+  logout,
+  (req,res) => {
+    // console.log(req)
+    res.status(200).json({message: "logged out"})
   }
 )
 
