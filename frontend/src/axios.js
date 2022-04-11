@@ -9,14 +9,14 @@ import axios from "axios";
 // axios.defaults.headers['Content-Type'] = 'text/plain';
 
 const instance = axios.create({
-  baseURL: 'http://localhost:5000',
-  headers: {
-    crossorigin:true,
-    'Access-Control-Allow-Credentials':true,
-    'Access-Control-Allow-Origin' : 'http://localhost:5000',
-    'Access-Control-Allow-Methods':'GET,PUT,POST,DELETE,PATCH,OPTIONS',
-  },
-  withCredentials: true,
+    baseURL: 'https://api.wellity.in',
+    headers: {
+        crossorigin: true,
+        'Access-Control-Allow-Credentials': true,
+        'Access-Control-Allow-Origin': 'https://api.wellity.in',
+        'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE,PATCH,OPTIONS',
+    },
+    withCredentials: true,
 })
 
 export default instance;
