@@ -1,6 +1,9 @@
 import React, { useEffect } from 'react';
 import axios from '../../axios';
 
+import './index.css';
+import Sidebar from '../../components/Sidebar/SideBar'
+import NewPatient from '../../components/NewPatient/NewPatient';
 export default function Dashboard() {
 
     useEffect(() => {
@@ -10,8 +13,14 @@ export default function Dashboard() {
     })
 
 
-    return ( <
-        div > Dashboard
-        for admin < /div>
+    return ( 
+        <div className='Dashboard-container'>
+        <div className='sidebar'>
+        <Sidebar/>
+        </div>
+        <div className='MainPage'>
+            <NewPatient/>
+        </div>
+        </div>
     )
 }

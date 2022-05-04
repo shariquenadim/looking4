@@ -1,0 +1,39 @@
+body{
+    background-color: rgb(8,48,69);
+    color: #fff;
+    font-family: 'Lobster';
+}
+.Dashboard-container{
+    width: 100%;
+    height: 140vh;
+    display: grid;
+    grid-template-columns: 1fr 6fr;
+    position: absolute;
+}
+.sidebar{
+    background-color: rgb(8,48,69);
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.068);
+    border-top: none;
+    border-left: none;
+    transition: 0.5s all;
+}
+.MainPage{
+    background-color: rgb(8,48,69);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.hoverEffect{
+    cursor: pointer;
+}
+.hoverEffect:hover{
+    background-color: rgb(2, 29, 44);
+}
+.inputField{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 50px
+}
