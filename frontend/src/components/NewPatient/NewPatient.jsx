@@ -193,6 +193,20 @@ const NewPatient = () => {
     setGurNum(number);
   }
 
+  //Fees
+  const cashHandler = (e) => {
+    const cash = e.target.value;
+    setFees(cash);
+  }
+  const upiHandler = (e) => {
+    const upi = e.target.value;
+    setFees(upi);
+  }
+  const notHandler = (e) => {
+    const notpaid = e.target.value;
+    setFees(notpaid);
+  }
+
   return (
     <>
 
@@ -295,9 +309,9 @@ const NewPatient = () => {
     <FormLabel style={{color:'#fff',fontSize:'20px',textTransform:'uppercase'}} id="demo-row-radio-buttons-group-label">
         Doctor Fees
     </FormLabel>
-      <FormControlLabel value={paid-cash} control={<Checkbox />} label="paid in Cash" />
-      <FormControlLabel value={paid-upi } control={<Checkbox />} label="paid Via UPI" />
-      <FormControlLabel value={not-paid } control={<Checkbox />} label="Not paid" />
+      <FormControlLabel value={fees} onChange={cashHandler}  control={<Checkbox />} label="paid in Cash" />
+      <FormControlLabel value={fees } onChange={upiHandler} control={<Checkbox />} label="paid Via UPI" />
+      <FormControlLabel value={fees } onChange={notHandler} control={<Checkbox />} label="Not paid" />
     </FormGroup>
 
     <Stack spacing={2} direction="row">
